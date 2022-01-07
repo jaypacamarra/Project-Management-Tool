@@ -1,16 +1,21 @@
 CC=gcc
 CFLAGS=-c
+SRCLOC=Src
+INCLOC=Inc
 
-PMT: main.o menu.o 
-	$(CC) main.o menu.o -o PMT 
+PMT: main.o menu.o PartNumber.o
+	$(CC) main.o menu.o PartNumber.o -o PMT 
 	rm -rf *.o
 
-main.o: Src/main.c
-	$(CC) $(CFLAGS) Src/main.c
+main.o: $(SRCLOC)/main.c
+	$(CC) $(CFLAGS) $(SRCLOC)/main.c
 
-menu.o: Src/menu.c 
-	$(CC) $(CFLAGS) Src/menu.c
+menu.o: $(SRCLOC)/menu.c 
+	$(CC) $(CFLAGS) $(SRCLOC)/menu.c
+
+PartNumber.o: $(SRCLOC)/PartNumber.c 
+	$(CC) $(CFLAGS) $(SRCLOC)/PartNumber.c
 
 clean:
 	rm -rf PMT
-	rm -rf *.o
+	rm -rf Src/*.o
