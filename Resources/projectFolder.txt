@@ -1,0 +1,39 @@
+============================================
+Hierarchy
+
+project workspace (.pwspc folder)
+||
+||\== project 1     (.prj folder)
+||\== project 2     (.prj folder)
+||
+
+.
+.
+.
+.
+.
+
+||
+||\== project n-1   (.prj folder)
+||\== project n     (.prj folder)
+
+============================================
+
+
+.pwspc folder
+=============
+- pwspc.txt
+
+
+.prj folder
+=============
+- prj.txt
+
+
+
+
+
+
+
+
+

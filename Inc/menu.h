@@ -6,6 +6,8 @@
 // macro to clear screen
 #define clrscr() printf("\e[1;1H\e[2J")
 
+#define resetUserInput() userInput = -1
+
 typedef int userInput_t;
 typedef struct
 {

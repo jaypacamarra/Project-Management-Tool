@@ -61,7 +61,7 @@ void CreatePartNumberMenu()
 {
     MenuHandle CreatePartNumberMenuHandle;
     CreatePartNumberMenuHandle.userBack = false;
-    unsigned long partNumber;
+    unsigned long partNumber = -1; // default with invalid partNumber
 
     while( !CreatePartNumberMenuHandle.userBack )
     {
@@ -70,9 +70,13 @@ void CreatePartNumberMenu()
         printf("option menu:\n");
         printf(" 1.generate part number\n");
         printf(" 2.back\n\n");
-        if( CreatePartNumberMenuHandle.userInput == 1)
+        if ( partNumber != -1 )
         {
             printf("Part Number: %ld\n\n", partNumber);
+        }
+        else
+        {
+            printf("Part Number: \n\n");
         }
 
         CreatePartNumberMenuHandle.userInput = getUserInput();
@@ -81,6 +85,7 @@ void CreatePartNumberMenu()
         {
             case 1:
                 partNumber = generatePartNumber();
+                CreatePartNumberMenuHandle.resetUserInput();
                 break;
             case 2:
                 CreatePartNumberMenuHandle.userBack = true;
