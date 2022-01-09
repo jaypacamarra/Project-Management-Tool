@@ -66,10 +66,15 @@ void CreatePartNumberMenu()
     while( !CreatePartNumberMenuHandle.userBack )
     {
         clrscr(); 
+
+        // print Create Part Number Menu
         printf("\nproject management tool\n\n");
         printf("option menu:\n");
         printf(" 1.generate part number\n");
         printf(" 2.back\n\n");
+
+        // show no PartNumber upon entering this menu
+        // Only shows a partNumber if the user selects generate part number
         if ( partNumber != -1 )
         {
             printf("Part Number: %ld\n\n", partNumber);

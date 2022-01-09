@@ -17,11 +17,9 @@ int main() {
         switch (userInput)
         {
             case 1:
-                ProjectMenu();
-                break;
+                ProjectMenu(); break;
             case 2:
-                CreatePartNumberMenu();
-                break;
+                CreatePartNumberMenu(); break;
             case 3:
                 Exit = true;
         }

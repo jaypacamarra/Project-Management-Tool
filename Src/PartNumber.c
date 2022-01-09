@@ -36,16 +36,16 @@ unsigned long generatePartNumber()
     }
 
     // convert lastPartNumber to string
-    char str[6];
-    sprintf(str, "%d", lastPartNumber);
-    char strWithNewLine
+    char strLastPartNumber[6];
+    sprintf(strLastPartNumber, "%d", lastPartNumber);
+    char strWithNewLine[7] = { '\n' }; //remaining 6 characters are for strLastPartNumber
+    strncat(strWithNewLine, strLastPartNumber, 6);
     
-    // append lastPartNumber to GeneratedPartNumbers.txt
-    fputs(str, fappendptr);
+    // append strWithNewLine to GeneratedPartNumbers.txt
+    fputs(strWithNewLine, fappendptr);
     
     fclose(fappendptr);
     
-    while(1);
-    // check partNumber if valid
-    return partNumber > 999999 ? -1 : partNumber;
+    // check partNumber if valid, retur -1 if invalid else partNumber
+    return partNumber > 999999 || partNumber < 0 ? -1 : partNumber;
 }
